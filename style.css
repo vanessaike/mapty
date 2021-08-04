@@ -54,7 +54,6 @@ li {
 
 .sidebar--active {
   display: block;
-  position: relative;
   height: 100vh;
   width: 40%;
   padding: 2rem;
@@ -103,13 +102,8 @@ li {
 
 /* DELETE WORKOUTS BUTTON */
 
-.wrapper--btn-reset {
-  position: absolute;
-  bottom: 0;
-  padding: 1rem 0;
-}
-
 .btn--reset {
+  margin-top: 3rem;
   padding: 1rem;
   border-radius: 100vh;
   background: linear-gradient(180deg, #ca7064 0%, #e43d3d 100%);
