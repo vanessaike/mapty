@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap");
+
+/* GENERAL STYLES */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+}
+
+input {
+  font-family: "Montserrat", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.wrapper--page {
+  display: flex;
+  flex-direction: row;
+}
+
+/* SIDEBAR */
+
+.title {
+  padding: 2rem;
+  font-size: 4rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.425);
+}
+
+.title__icon {
+  color: #5494b8;
+}
+
+.sidebar--active {
+  display: block;
+  position: relative;
+  height: 100vh;
+  width: 40%;
+  padding: 2rem;
+  background-color: #f4f4f4;
+}
+
+/* WORKOUTS */
+
+.workouts {
+  height: 75%;
+  overflow-y: auto;
+}
+
+.workout {
+  padding: 1rem;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(180deg, #64b8ca 0%, #5494b8 100%);
+}
+
+.workout__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1.8rem;
+  color: white;
+}
+
+.workout__row {
+  display: flex;
+  flex-direction: row;
+}
+
+.workout__details {
+  margin: 1rem 2rem 0 0;
+}
+
+.workout__icon {
+  color: rgb(236, 236, 117);
+}
+
+.far {
+  pointer-events: none;
+}
+
+/* DELETE WORKOUTS BUTTON */
+
+.wrapper--btn-reset {
+  position: absolute;
+  bottom: 0;
+  padding: 1rem 0;
+}
+
+.btn--reset {
+  padding: 1rem;
+  border-radius: 100vh;
+  background: linear-gradient(180deg, #ca7064 0%, #e43d3d 100%);
+}
+
+.btn--reset:hover {
+  background: linear-gradient(180deg, #ca7064b9 0%, #e43d3dc9 100%);
+}
+
+/* MODAL WINDOW */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background-color: rgba(19, 19, 19, 0.473);
+  backdrop-filter: blur(4px);
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 30rem;
+  height: 25rem;
+  z-index: 5;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  background-color: #f4f4f4;
+}
+
+.form__label {
+  font-weight: bold;
+}
+
+.form__input {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #e4e4e4;
+}
+
+.form__row {
+  margin-top: 2rem;
+}
+
+.wrapper--btn-save-workout {
+  margin-top: 5rem;
+}
+
+.btn--save-workout {
+  padding: 1rem;
+  color: white;
+  border-radius: 0.5rem;
+  background-color: #5494b8;
+}
+
+.btn--save-workout:hover {
+  background-color: #5493b8ad;
+}
+
+/* SIDEBAR FOR MOBILE */
+
+.wrapper--btn-open-sidebar {
+  position: fixed;
+  padding: 1rem;
+  z-index: 2;
+}
+
+.btn--open-sidebar {
+  position: fixed;
+  padding: 1rem;
+  font-size: 3rem;
+  color: #64b8ca;
+  border-radius: 0.2rem;
+  background-color: #f4f4f4;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+/* MAP */
+
+#map {
+  height: 100vh;
+  width: 100%;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* MARKERS */
+.leaflet-popup .leaflet-popup-content-wrapper {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.8rem;
+  color: white;
+  border-radius: 0.5rem;
+}
+
+.cycling-popup .leaflet-popup-content-wrapper,
+.cycling-popup .leaflet-popup-tip {
+  background-color: #64b8ca;
+}
+
+.running-popup .leaflet-popup-content-wrapper,
+.running-popup .leaflet-popup-tip {
+  background-color: #5494b8;
+}
+
+/* SIDEBAR ANIMATION */
+
+@keyframes openSidebar {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+/* SMALLER SCREENS */
+
+@media only screen and (max-width: 900px) {
+  /* SIDEBAR */
+  .title {
+    font-size: 2.8rem;
+  }
+
+  .sidebar--active {
+    position: fixed;
+    width: 25rem;
+    z-index: 4;
+    animation: openSidebar 1s;
+  }
+
+  .btn--reset {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+  /* WORKOUT */
+  .workout {
+    font-size: 1.2rem;
+  }
+
+  .workout__header {
+    font-size: 1.5rem;
+  }
+  /* MAP */
+  #map {
+    width: 100%;
+    cursor: pointer;
+  }
+}
