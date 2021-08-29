@@ -103,6 +103,7 @@ li {
 /* DELETE WORKOUTS BUTTON */
 
 .btn--reset {
+  color: white;
   margin-top: 3rem;
   padding: 1rem;
   border-radius: 100vh;
